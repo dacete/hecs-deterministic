@@ -560,7 +560,7 @@ impl Entities {
             }
         }
         if let Some(max) = freelist.iter().map(|e: &Entity| e.id()).max() {
-            if max as usize > self.meta.len() {
+            if max as usize >= self.meta.len() {
                 self.meta.resize(max as usize + 1, EntityMeta::EMPTY);
             }
         }
